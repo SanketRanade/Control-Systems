@@ -1,0 +1,108 @@
+\documentclass{beamer}
+\mode<presentation>
+\usepackage{adjustbox}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{listings}
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-}
+\usepackage{xcolor}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codeblue}{rgb}{0.8,0.3,0.3}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.99,0.99,0.99}
+ 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},  
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{codeblue},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,        
+    breaklines=true,                
+    captionpos=b,                   
+    keepspaces=true,                
+    showspaces=false,               
+    showstringspaces=false,
+    showtabs=false,                 
+    tabsize=2
+}
+\lstset{style=mystyle}
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\urlstyle{same}
+\usetheme{Ilmenau}
+\usecolortheme{orchid}
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.9ex,dp=1ex,right]{author in head/foot}%
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\setbeamertemplate{navigation symbols}{}
+
+
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+\newcommand{\sgn}{\mathop{\mathrm{sgn}}}
+
+\lstset{
+%language=C,
+frame=single, 
+breaklines=true,
+columns=fullflexible
+}
+
+\numberwithin{equation}{section}
+
+\title{Control Systems \\ Assignment 1}
+\author{Sanket Ranade\\ EE19BTECH11012}
+\date{\today} 
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\section{Problem}
+\begin{frame}
+\frametitle{Problem Statement}
+Q14. Use Python to generate the partial-fraction expansion of the following function
+\begin{equation} 
+F(s) = \dfrac{10^4(s+5)(s+70)}{s(s+45)(s+55)(s^2+7s+110)(s^2+6s+95)}
+\label{}
+\end{equation}
+\end{frame}
+
+\section{Python Code}
+\begin{frame}{Python Code}
+\lstinputlisting[language=python, firstline =1,lastline=14,basicstyle=\small]{control_assgn1.py}
+\end{frame}
+
+\begin{frame}
+The following output we get while we run the above code:
+\begin{figure}
+\centering
+\includegraphics[width=0.98\columnwidth]{output.png}
+% \caption{Output}
+\label{fig:circle_diameter}
+\end{figure}
+\vspace{10mm}
+The above code is given here \url{https://github.com/SanketRanade/Control-Systems/blob/master/Assgn-1/control_assgn1.py}
+\end{frame}
+
+\end{document}
